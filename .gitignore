@@ -1,0 +1,6 @@
+# macOS 文件夹元数据
+.DS_Store
+
+# 本地私人配置：含节点订阅、MITM 证书和口令
+/quantumult-x-rules.conf
+/original-quantumult-x-rules.conf
