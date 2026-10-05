@@ -1,0 +1,67 @@
+# 自定义分流：优先于通用 China / Global 规则加载。
+# 修改本文件并推送到 main 后，Quantumult X 将按资源更新间隔重新获取。
+
+# OpenAI / ChatGPT（仅服务自身域名）
+host-suffix, openai.com, AI
+host-suffix, chatgpt.com, AI
+host-suffix, oaistatic.com, AI
+host-suffix, oaiusercontent.com, AI
+
+# Grok / xAI；不包含整个 X / Twitter
+host-suffix, grok.com, AI
+host-suffix, x.ai, AI
+
+# AI 搜索、编程与模型平台
+host-suffix, perplexity.ai, AI
+host-suffix, perplexity.com, AI
+host-suffix, cursor.com, AI
+host-suffix, cursor.sh, AI
+host-suffix, cursorapi.com, AI
+host-suffix, mistral.ai, AI
+host-suffix, poe.com, AI
+host-suffix, huggingface.co, AI
+host-suffix, openrouter.ai, AI
+host-suffix, character.ai, AI
+host-suffix, cohere.com, AI
+host-suffix, groq.com, AI
+
+# AI 应用
+host-suffix, meta.ai, AI
+host-suffix, midjourney.com, AI
+host-suffix, dify.ai, AI
+host-suffix, manus.im, AI
+host-suffix, you.com, AI
+host-suffix, elevenlabs.io, AI
+
+# Google AI / Gemini / NotebookLM
+host, aistudio.google.com, AI
+host, generativelanguage.googleapis.com, AI
+host-suffix, gemini.google.com, AI
+host, ai.google.dev, AI
+host, makersuite.google.com, AI
+host-suffix, notebook.google.com, AI
+host-suffix, notebooklm.google.com, AI
+host-suffix, notebooklm.google, AI
+host, notebooklm-pa.googleapis.com, AI
+
+# Claude；上游 Claude.list 尚未包含 claude.com / claudeusercontent.com
+host-suffix, claude.com, AI
+host-suffix, claudeusercontent.com, AI
+
+# Microsoft Copilot 主入口；普通 Bing 不走 AI 策略
+host, copilot.microsoft.com, AI
+
+# 国内 AI 直连
+host-suffix, deepseek.com, direct
+host-suffix, kimi.ai, direct
+host-suffix, kimi.com, direct
+
+# 局域网和链路本地地址
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 169.254.0.0/16, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 224.0.0.0/24, direct
+
+host-suffix, su8.codes, direct
