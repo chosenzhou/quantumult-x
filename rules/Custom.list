@@ -1,5 +1,0 @@
-# 个人补充规则。以后只需编辑此文件，每条规则最后填写策略组名。
-# NotebookLM 页面与后端统一走 AI；确认 AI 策略实际选中支持地区的节点。
-HOST,notebooklm.google.com,AI
-HOST,notebooklm-pa.googleapis.com,AI
-HOST,notebooklm.googleapis.com,AI
