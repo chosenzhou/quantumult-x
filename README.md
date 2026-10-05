@@ -1,11 +1,6 @@
 # Quantumult X 自定义分流
 
-这个仓库存放 [Quantumult X 配置文件](quantumult-x.conf)和自定义远程规则。配置文件中的 `https://xxx` 是节点订阅地址占位符，设备上继续使用你自己的真实地址。以后修改 [`rules/custom.list`](rules/custom.list) 并推送到 `main`，Quantumult X 会按资源更新间隔获取新版本。`rules/fallback.list` 存放最后执行的国内 IP 与最终兜底规则。
-
 ## 在现有配置中只需改一次
-
-1. 将 [`quantumult-x.conf`](quantumult-x.conf) 中的 `[filter_remote]` 和 `[rewrite_remote]` 内容应用到设备，清空原 `[filter_local]` 的规则内容。自定义服务规则放在前面，兜底规则放在最后；`force-policy` 不用于自定义文件，因为里面同时有 `AI` 和 `direct`。
-2. 在 Quantumult X 中更新一次远程资源。此后规则文件按 `update-interval=86400`（秒）自动更新；刚推送完如需立即生效，可手动更新远程资源。
 
 ```ini
 [filter_remote]
@@ -25,11 +20,3 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 
 https://raw.githubusercontent.com/chosenzhou/quantumult-x/main/rules/fallback.list, tag=国内IP与最终兜底, update-interval=86400, opt-parser=false, enabled=true
 ```
-
-OpenAI、Gemini、Copilot 三个上游合集有共享服务域名或较宽的匹配项，本配置改为由 `rules/custom.list` 精准指定主要入口。这样普通 Bing、Stripe、Auth0、Sentry、Cloudflare 等不会因为 AI 规则而整体进入 `AI`。如果某项服务无法正常工作，先在 Quantumult X 的活动记录中确认实际请求域名，再把必要的专属域名加入 `rules/custom.list`。
-
-## 其他配置检查
-
-- `quantumult-x.conf` 中的去广告复写已设为 `enabled=false`，与“默认关闭”的注释一致；若需启用，请确认其 MITM 主机名范围。
-- 分流与复写远程资源已设为每天自动更新。两个节点订阅仍保持原来的 `update-interval=-1`，不受自定义规则更新影响。
-- 本仓库不存放机场订阅地址、MitM 证书、密码或私钥。
