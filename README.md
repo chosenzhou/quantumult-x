@@ -2,10 +2,6 @@
 
 ## 配置方式
 
-仓库中的 `quantumult-x.conf` 是公开模板；个人订阅地址和 MITM 证书只保存在本地配置中。自定义规则维护在 [`rules/custom.list`](rules/custom.list)，推送到 `main` 后由 Quantumult X 每 86400 秒更新一次。
-
-当前采用覆盖优先的 AI 分流：OpenAI、Gemini、Claude、Copilot、Civitai 使用 blackmatrix7 的原生规则；其中 OpenAI / Copilot 可能把共享域名和普通 Bing 分到 `AI`。`custom.list` 只补充这些列表未覆盖的 AI 域名和国内 AI 直连。
-
 `[filter_remote]` 的加载顺序如下：
 
 ```ini
@@ -34,5 +30,3 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list, tag=国际网站, force-policy=全球加速, update-interval=86400, opt-parser=false, enabled=true
 ```
-
-`geoip, cn, direct` 和 `final, 最终兜底` 保留在 `quantumult-x.conf` 的 `[filter_local]` 末尾。`最终兜底` 策略组仍可选 `全球加速` 或 `direct`；`fallback.list` 已删除。
