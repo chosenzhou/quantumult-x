@@ -25,8 +25,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list, tag=国际网站, force-policy=全球加速, update-interval=86400, opt-parser=false, enabled=true
 
 https://raw.githubusercontent.com/chosenzhou/quantumult-x/main/rules/fallback.list, tag=国内IP与最终兜底, update-interval=86400, opt-parser=false, enabled=true
-
-[filter_local]
 ```
 
 OpenAI、Gemini、Copilot 三个上游合集有共享服务域名或较宽的匹配项，本配置改为由 `rules/custom.list` 精准指定主要入口。这样普通 Bing、Stripe、Auth0、Sentry、Cloudflare 等不会因为 AI 规则而整体进入 `AI`。如果某项服务无法正常工作，先在 Quantumult X 的活动记录中确认实际请求域名，再把必要的专属域名加入 `rules/custom.list`。
