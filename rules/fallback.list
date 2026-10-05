@@ -1,3 +1,0 @@
-# 放在 [filter_remote] 的最后：所有服务规则之后才执行兜底。
-geoip, cn, direct
-final, 最终兜底
