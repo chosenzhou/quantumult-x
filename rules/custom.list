@@ -1,4 +1,4 @@
-# 自定义分流：补充 blackmatrix7 尚未覆盖的 AI 域名，并指定国内 AI 直连。
+# 自定义分流：补充 AI 服务域名并指定 AI 策略；国内 AI 服务明确直连。
 # 修改本文件并推送到 main 后，Quantumult X 将按资源更新间隔重新获取。
 
 # Grok / xAI；不包含整个 X / Twitter
@@ -8,22 +8,38 @@ host-suffix, x.ai, AI
 # AI 搜索、编程与模型平台
 host-suffix, perplexity.ai, AI
 host-suffix, perplexity.com, AI
+
+# Cursor：主站、API、下载更新资源、云端环境及登录入口
 host-suffix, cursor.com, AI
 host-suffix, cursor.sh, AI
 host-suffix, cursorapi.com, AI
+host-suffix, cursor-cdn.com, AI
+host-suffix, cursorvm.com, AI
+host, accounts.spacex.ai, AI
+
+# 模型与服务平台
 host-suffix, mistral.ai, AI
 host-suffix, poe.com, AI
+# Hugging Face：主站、模型下载存储/CDN 和 Spaces 托管应用
 host-suffix, huggingface.co, AI
+host-suffix, hf.co, AI
+host-suffix, hf.space, AI
 host-suffix, openrouter.ai, AI
 host-suffix, character.ai, AI
+# Cohere：主站和 API（api.cohere.ai）
 host-suffix, cohere.com, AI
+host-suffix, cohere.ai, AI
 host-suffix, groq.com, AI
 
 # AI 应用
 host-suffix, meta.ai, AI
 host-suffix, midjourney.com, AI
+# Dify：云平台与发布的 WebApp
 host-suffix, dify.ai, AI
+host-suffix, udify.app, AI
+# Manus：主站与 API（api.manus.ai）
 host-suffix, manus.im, AI
+host-suffix, manus.ai, AI
 host-suffix, you.com, AI
 host-suffix, elevenlabs.io, AI
 
